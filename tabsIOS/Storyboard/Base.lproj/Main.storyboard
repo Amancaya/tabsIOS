@@ -88,10 +88,48 @@
                     <view key="view" contentMode="scaleToFill" id="6RC-Th-zGT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EqK-Gq-Rby">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FontFamilyCell" textLabel="84X-jP-OAK" style="IBUITableViewCellStyleDefault" id="IUY-uQ-2pj">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IUY-uQ-2pj" id="g2J-OG-7w9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="84X-jP-OAK">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lew-s2-SUB" id="GQd-G9-4Tz"/>
+                                    <outlet property="delegate" destination="Lew-s2-SUB" id="60i-8B-Ley"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ICK-74-2TO" firstAttribute="bottom" secondItem="EqK-Gq-Rby" secondAttribute="bottom" id="5nx-0V-qBc"/>
+                            <constraint firstItem="EqK-Gq-Rby" firstAttribute="top" secondItem="ICK-74-2TO" secondAttribute="top" id="Eua-Tf-wUp"/>
+                            <constraint firstItem="EqK-Gq-Rby" firstAttribute="leading" secondItem="ICK-74-2TO" secondAttribute="leading" id="J13-Bx-ynw"/>
+                            <constraint firstItem="ICK-74-2TO" firstAttribute="trailing" secondItem="EqK-Gq-Rby" secondAttribute="trailing" id="owf-IL-e1M"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ICK-74-2TO"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Third" image="first" id="6yF-M8-cx0"/>
+                    <connections>
+                        <outlet property="tableView" destination="EqK-Gq-Rby" id="XjZ-v8-vNe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZZ-nR-nlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

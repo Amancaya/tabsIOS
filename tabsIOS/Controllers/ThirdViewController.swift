@@ -8,12 +8,21 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var families : [String] = []
+    
+    var fonts : [String: [String]] = [:]
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        families = UIFont.familyNames
+        for fam in families {
+            fonts[fam] = UIFont.fontNames(forFamilyName: fam)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +40,22 @@ class ThirdViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: - Metodos del protocolo UITableViewDataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.families.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FontFamilyCell", for: indexPath)
+        cell.textLabel?.text = families[indexPath.row]
+        
+        return cell
+    }
 
 }
