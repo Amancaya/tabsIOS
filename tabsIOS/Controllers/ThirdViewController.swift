@@ -32,15 +32,20 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowFontsForFamily" {
+            let navController = segue.destination as! UINavigationController
+            let destinationVC = navController.topViewController as! FontFamillyController
+            let idx = self.tableView.indexPathForSelectedRow!.row
+            destinationVC.familyName = self.families[idx]
+            destinationVC.fonts = self.fonts[self.families[idx]]!
+        }
     }
-    */
+ 
     
     //MARK: - Metodos del protocolo UITableViewDataSource
     

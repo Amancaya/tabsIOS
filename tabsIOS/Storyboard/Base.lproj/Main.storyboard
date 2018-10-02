@@ -138,7 +138,7 @@
             </objects>
             <point key="canvasLocation" x="34" y="806"/>
         </scene>
-        <!--Font Familly Controller-->
+        <!--Detalle de fuente-->
         <scene sceneID="mjq-Wk-ZfL">
             <objects>
                 <viewController id="urK-RQ-4Hi" customClass="FontFamillyController" customModule="tabsIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -182,7 +182,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wId-VX-ccr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="28g-iq-UcN"/>
+                    <navigationItem key="navigationItem" title="Detalle de fuente" id="28g-iq-UcN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="cDb-jh-dHI">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="urK-RQ-4Hi" id="A9J-Sx-fnY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="labelTitle" destination="woh-Va-cef" id="fKh-sr-m7g"/>
                         <outlet property="pickerFonts" destination="isi-rg-AdT" id="oBW-dr-0G6"/>
